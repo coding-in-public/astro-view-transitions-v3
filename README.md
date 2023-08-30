@@ -1,2 +1,2 @@
-# Astro Image Optimization
+# Astro View Transitions
 
