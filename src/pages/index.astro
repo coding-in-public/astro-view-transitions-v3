@@ -18,7 +18,13 @@ import { Image } from "astro:assets";
           applications.
         </p>
       </div>
-      <Image src={astroIcon} alt="Astro image" format="avif" width={500} />
+      <Image
+        src={astroIcon}
+        alt="Astro image"
+        format="avif"
+        width={500}
+        transition:name="img"
+      />
     </div>
     <div class="flex gap-6 max-w-7xl flex-wrap mx-auto">
       <Card

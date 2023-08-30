@@ -16,6 +16,7 @@ const { Content } = await post.render();
       alt={post.data.coverAlt}
       format="avif"
       width={300}
+      transition:name="img"
     />
     <h1 class="text-4xl font-bold">{post.data.title}</h1>
     <div class="max-w-prose grid gap-6">

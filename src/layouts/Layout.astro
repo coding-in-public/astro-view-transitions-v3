@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions, fade } from "astro:transitions";
 import "../styles/main.css";
 
 import { Icon } from "astro-icon";
@@ -18,9 +19,13 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
-  <body class="bg-theme-base text-theme-900">
-    <nav class="flex items-center justify-center gap-4 p-2">
+  <body
+    class="bg-theme-base text-theme-900"
+    transition:animate={fade({ duration: "0.4s" })}
+  >
+    <nav class="flex items-center justify-center gap-4 p-2" transition:persist>
       <a
         class="w-8 h-8 grid place-items-center rounded hover:bg-theme-200"
         aria-label="Go Home"
@@ -36,7 +41,7 @@ const { title } = Astro.props;
         <Icon name="bx:bxs-sun" class="w-4 h-4 text-theme-800" />
       </button>
     </nav>
-    <div>
+    <div transition:animate="slide">
       <slot />
     </div>
     <script>
@@ -48,6 +53,7 @@ const { title } = Astro.props;
         document.documentElement.setAttribute("data-theme", theme);
 
       window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
+      document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
 
       themeToggles.forEach((toggle) => {
         toggle.addEventListener("click", () => {
