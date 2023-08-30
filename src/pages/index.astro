@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import astroIcon from "../assets/astro-icon.png";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="grid gap-12 pb-12 px-6">
+    <div
+      class="flex items-center gap-6 justify-centers mx-auto flex-wrap-reverse"
+    >
+      <div class="grid gap-4">
+        <h1 class="text-4xl sm:text-6xl font-bold">View Transitions</h1>
+        <p class="text-xl max-w-[40ch]">
+          The View Transitions API in JavaScript provides a seamless way to
+          create smooth transitions between views or components in web
+          applications.
+        </p>
+      </div>
+      <Image src={astroIcon} alt="Astro image" format="avif" width={500} />
+    </div>
+    <div class="flex gap-6 max-w-7xl flex-wrap mx-auto">
+      <Card
+        href="https://docs.astro.build/guides/images/"
+        title="View Transitions Documentation"
+        body="View the Docs on View Transitions yourself"
+      />
+      <Card
+        href="/post"
+        title="Read Blog Post"
+        body="View the Docs on View Transitions yourself"
+      />
+      <Card
+        href="/soon.pdf"
+        title="Read Secret Post"
+        body="Wouldn’t you like to know?"
+      />
+    </div>
+  </main>
+</Layout>

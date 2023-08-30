@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+const post = await getEntry("posts", "post-1");
+
+const { Content } = await post.render();
+---
+
+<Layout title="Welcome to Astro.">
+  <main
+    class="grid gap-4 pb-12 max-w-7xl mx-auto place-items-center px-6 sm:text-center"
+  >
+    <Image
+      src={post.data.cover}
+      alt={post.data.coverAlt}
+      format="avif"
+      width={300}
+    />
+    <h1 class="text-4xl font-bold">{post.data.title}</h1>
+    <div class="max-w-prose grid gap-6">
+      <Content />
+    </div>
+  </main>
+</Layout>

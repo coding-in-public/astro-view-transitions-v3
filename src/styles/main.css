@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* light mode defaults */
+    --color-theme-light: 210 40% 99%;
+    --color-theme-light-100: 210 40% 96.1%;
+    --color-theme-light-200: 214 31.8% 91.4%;
+    --color-theme-light-400: 215 20.2% 65.1%;
+    --color-theme-light-500: 215 16.3% 46.9%;
+    --color-theme-light-600: 215 19.3% 34.5%;
+    --color-theme-light-800: 217 32.6% 17.5%;
+    --color-theme-light-900: 222 47.4% 11.2%;
+    --color-danger-light: 0 90.6% 70.8%;
+    --color-success-light: 142 69.2% 58%;
+    --color-info-light: 213 93.9% 67.8%;
+
+    /* dark mode defaults */
+    --color-theme-dark: 217 32.6% 17.5%;
+    --color-theme-dark-100: 215 25% 26.7%;
+    --color-theme-dark-200: 215 19.3% 44.5%;
+    --color-theme-dark-400: 215 19.3% 54.5%;
+    --color-theme-dark-500: 213 26.8% 63.9%;
+    --color-theme-dark-600: 215 20.2% 78.1%;
+    --color-theme-dark-800: 215 16.3% 82.9%;
+    --color-theme-dark-900: 213 26.8% 89.9%;
+    --color-danger-dark: 0 72.2% 50.6%;
+    --color-success-dark: 142 76.2% 36.3%;
+    --color-info-dark: 221 53.2% 63.3%;
+
+    --color-theme: var(--color-theme-light);
+    --color-theme-100: var(--color-theme-light-100);
+    --color-theme-200: var(--color-theme-light-200);
+    --color-theme-400: var(--color-theme-light-400);
+    --color-theme-500: var(--color-theme-light-500);
+    --color-theme-600: var(--color-theme-light-600);
+    --color-theme-800: var(--color-theme-light-800);
+    --color-theme-900: var(--color-theme-light-900);
+    --color-danger: var(--color-danger-light);
+    --color-success: var(--color-success-light);
+    --color-info: var(--color-info-light);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-theme: var(--color-theme-dark);
+      --color-theme-100: var(--color-theme-dark-100);
+      --color-theme-200: var(--color-theme-dark-200);
+      --color-theme-400: var(--color-theme-dark-400);
+      --color-theme-500: var(--color-theme-dark-500);
+      --color-theme-600: var(--color-theme-dark-600);
+      --color-theme-800: var(--color-theme-dark-800);
+      --color-theme-900: var(--color-theme-dark-900);
+      --color-danger: var(--color-danger-dark);
+      --color-success: var(--color-success-dark);
+      --color-info: var(--color-info-dark);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-theme: var(--color-theme-dark);
+    --color-theme-100: var(--color-theme-dark-100);
+    --color-theme-200: var(--color-theme-dark-200);
+    --color-theme-400: var(--color-theme-dark-400);
+    --color-theme-500: var(--color-theme-dark-500);
+    --color-theme-600: var(--color-theme-dark-600);
+    --color-theme-800: var(--color-theme-dark-800);
+    --color-theme-900: var(--color-theme-dark-900);
+    --color-danger: var(--color-danger-dark);
+    --color-success: var(--color-success-dark);
+    --color-info: var(--color-info-dark);
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --color-theme: var(--color-theme-light);
+    --color-theme-100: var(--color-theme-light-100);
+    --color-theme-200: var(--color-theme-light-200);
+    --color-theme-400: var(--color-theme-light-400);
+    --color-theme-500: var(--color-theme-light-500);
+    --color-theme-600: var(--color-theme-light-600);
+    --color-theme-800: var(--color-theme-light-800);
+    --color-theme-900: var(--color-theme-light-900);
+    --color-danger: var(--color-danger-light);
+    --color-success: var(--color-success-light);
+    --color-info: var(--color-info-light);
+    color-scheme: light;
+  }
+}
