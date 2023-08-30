@@ -36,25 +36,26 @@ const { title } = Astro.props;
         <Icon name="bx:bxs-sun" class="w-4 h-4 text-theme-800" />
       </button>
     </nav>
-    <slot />
+    <div>
+      <slot />
+    </div>
+    <script>
+      const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+
+      const getTheme = () => localStorage.getItem("theme") || "light";
+
+      const setTheme = (theme) =>
+        document.documentElement.setAttribute("data-theme", theme);
+
+      window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
+
+      themeToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const nextTheme = getTheme() === "light" ? "dark" : "light";
+          localStorage.setItem("theme", nextTheme);
+          setTheme(nextTheme);
+        });
+      });
+    </script>
   </body>
 </html>
-
-<script>
-  const themeToggles = document.querySelectorAll("[data-theme-toggle]");
-
-  const getTheme = () => localStorage.getItem("theme") || "light";
-
-  const setTheme = (theme) =>
-    document.documentElement.setAttribute("data-theme", theme);
-
-  window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
-
-  themeToggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const nextTheme = getTheme() === "light" ? "dark" : "light";
-      localStorage.setItem("theme", nextTheme);
-      setTheme(nextTheme);
-    });
-  });
-</script>
